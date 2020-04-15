@@ -15,8 +15,11 @@ int main() {
 	cout << "myAge = " << myAge << endl;
 	cout << "sizeof(myAge) = " << sizeof(myAge) << endl << endl;
 
-	//Data types
-		//short, int, float, double, bool, char, string, void,
+	// Data types:
+		// short, int, float, double, bool, char, string, void.
+	// Data type modifiers:
+		// unsigned, const, static.
+
 
 	//Typecasting
 	cout << "4 / 5 = " << 4 / 5 << endl;
@@ -37,8 +40,6 @@ int main() {
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
-//
-
 //CONTROL FLOW
 	//If statement
 	if (true) {}
@@ -53,6 +54,8 @@ int main() {
 	default: cout << "myAge is not listed!" << endl << endl; break;
 	}
 
+	cout << endl;
+
 	//Conditional assignment
 	bool logical_statement = true;
 	string value_if_true = "true";
@@ -60,11 +63,38 @@ int main() {
 	string condional_assignment = logical_statement ? value_if_true : value_if_false;
 
 	//For statement
+	for (int i = 0; i<=10; ++i) { //use preincrement (++i) over post-incrment (i++) in for loops).
+		continue; //skip to next iteration of for loop.
+		break; //break out of for loop.
+	}
 
 	//While statement
+	int condition = 0;
+	while (condition < 10) {
+		cout << "condition = "<< condition << endl;
+		condition++;
+	}
+
+	cout << endl;
 
 	//Do-while statement
+	condition = 0;
+	do {
+		cout << "condition = " << condition << endl;
+		condition++;
+	} while (condition < 10);
+
+	cout << endl;
+
+
+//STRINGS
 
 
 	return 0;
 }
+
+//FUNCTIONS
+
+
+
+//CLASSES
