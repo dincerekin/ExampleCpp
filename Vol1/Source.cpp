@@ -22,12 +22,12 @@ int main() {
 	cout << "--5 = " << --five << endl << endl;
 
 	// Shorthand assignment operators
-	// a += b == a = a + b
+	// a += b is equivalent to a = a + b
 	// There is also -=, *=, /=, %=
 
 	// Outputting to console.
 	printf("Hello World!\n"); // C style
-	cout << "Hello " << "World!" << endl << endl; // C++ style
+	cout << "Hello " << "World!" << endl << endl; // C++ style, use this.
 
 	// Declaring variable.
 	int myAge = 69;
@@ -83,8 +83,8 @@ int main() {
 
 	//For statement
 	for (int i = 0; i<=10; ++i) { //use preincrement (++i) over post-incrment (i++) in for loops).
-		continue; //skip to next iteration of for loop.
-		break; //break out of for loop.
+		continue; //skip to next iteration of loop.
+		break; //break out of loop.
 	}
 
 	//While statement
@@ -105,8 +105,9 @@ int main() {
 
 	cout << endl;
 
-
 //EXCEPTION HANDLING
+	// Use this when trying to execute code that may raise an error.
+	// Only use this when the error is the result of something external to this program.
 	int number = 0;
 	try {
 		if (number != 0) {
