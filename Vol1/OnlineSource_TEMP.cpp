@@ -4,7 +4,7 @@ int main() {
 	// Statements must end with a semicolon
 	// Strings must be surrounded by "
 	// &lt;&lt; sends the text via standard output to the screen
-	cout& lt; &lt; "Hello Internet" & lt; &lt; endl;
+	cout << "Hello Internet"  << endl;
 
 	// ---------- VARIABLES / DATA TYPES ----------
 	// Variables start with a letter and can contain letters, numbers and _
@@ -28,12 +28,12 @@ int main() {
 
 		// stoi converts the string into an integer
 		intNumberGuessed = stoi(numberGuessed);
-		cout& lt; &lt; intNumberGuessed& lt; &lt; endl;
+		cout << intNumberGuessed << endl;
 
 		// We'll continue looping until the number entered is 4
 	} while (intNumberGuessed != 4);
 
-	cout& lt; &lt; "You Win" & lt; &lt; endl;
+	cout << "You Win"  << endl;
 
 	// ---------- STRINGS ----------
 	// The string library class provides a string object
@@ -47,18 +47,18 @@ int main() {
 	string birthdayString = " Birthday";
 
 	// You can combine / concatenate strings with +
-	cout& lt; &lt; happyArray + birthdayString & lt; &lt; endl;
+	cout << happyArray + birthdayString  << endl;
 
 	string yourName;
-	cout& lt; &lt; "What is your name? ";
+	cout << "What is your name? ";
 	getline(cin, yourName);
 
-	cout& lt; &lt; "Hello " & lt; &lt; yourName& lt; &lt; endl;
+	cout << "Hello "  << yourName << endl;
 
 	double eulersConstant = .57721;
 	string eulerGuess;
 	double eulerGuessDouble;
-	cout& lt; &lt; "What is Euler's Constant? ";
+	cout << "What is Euler's Constant? ";
 	getline(cin, eulerGuess);
 
 	// Converts a string into a double
@@ -66,54 +66,54 @@ int main() {
 	eulerGuessDouble = stod(eulerGuess);
 
 	if (eulerGuessDouble == eulersConstant) {
-		cout& lt; &lt; "You are right" & lt; &lt; endl;
+		cout << "You are right"  << endl;
 	}
 	else {
-		cout& lt; &lt; "You are wrong" & lt; &lt; endl;
+		cout << "You are wrong"  << endl;
 	}
 
 	// Size returns the number of characters
-	cout& lt; &lt; "Size of string " & lt; &lt; eulerGuess.size()& lt; &lt; endl;
+	cout << "Size of string "  << eulerGuess.size() << endl;
 
 	// empty tells you if string is empty or not
-	cout& lt; &lt; "Is string empty " & lt; &lt; eulerGuess.empty()& lt; &lt; endl;
+	cout << "Is string empty "  << eulerGuess.empty() << endl;
 
 	// append adds strings together
-	cout& lt; &lt; eulerGuess.append(" was your guess")& lt; &lt; endl;
+	cout << eulerGuess.append(" was your guess") << endl;
 
 	string dogString = "dog";
 	string catString = "cat";
 
 	// Compare returns a 0 for a match, 1 if less than, -1 if greater then
-	cout& lt; &lt; dogString.compare(catString)& lt; &lt; endl;
-	cout& lt; &lt; dogString.compare(dogString)& lt; &lt; endl;
-	cout& lt; &lt; catString.compare(dogString)& lt; &lt; endl;
+	cout << dogString.compare(catString) << endl;
+	cout << dogString.compare(dogString) << endl;
+	cout << catString.compare(dogString) << endl;
 
 	// assign copies a value to another string
 	string wholeName = yourName.assign(yourName);
-	cout& lt; &lt; wholeName& lt; &lt; endl;
+	cout << wholeName << endl;
 
 	// You can get a substring as well by defining the starting index and the
 	// number of characters to copy
 	string firstName = wholeName.assign(wholeName, 0, 5);
-	cout& lt; &lt; firstName& lt; &lt; endl;
+	cout << firstName << endl;
 
 	// find returns the index for the string your searching for starting
 	// from the index defined
 	int lastNameIndex = yourName.find("Banas", 0);
-	cout& lt; &lt; "Index for last name " & lt; &lt; lastNameIndex& lt; &lt; endl;
+	cout << "Index for last name "  << lastNameIndex << endl;
 
 	// insert places a string in the index defined
 	yourName.insert(5, " Justin");
-	cout& lt; &lt; yourName& lt; &lt; endl;
+	cout << yourName << endl;
 
 	// erase will delete 6 characters starting at index 7
 	yourName.erase(6, 7);
-	cout& lt; &lt; yourName& lt; &lt; endl;
+	cout << yourName << endl;
 
 	// replace 5 characters starting at index 6 with the string Maximus
 	yourName.replace(6, 5, "Maximus");
-	cout& lt; &lt; yourName& lt; &lt; endl;
+	cout << yourName << endl;
 
 	// ---------- VECTORS ----------
 	// Vectors are like arrays, but their size can change
@@ -129,40 +129,40 @@ int main() {
 	lotteryNumVect.insert(lotteryNumVect.begin() + 5, 44);
 
 	// at gets the value in the specified index
-	cout& lt; &lt; "Value in 5 " & lt; &lt; lotteryNumVect.at(5)& lt; &lt; endl;
+	cout << "Value in 5 "  << lotteryNumVect.at(5) << endl;
 
 	// push_back adds a value at the end of a vector
 	lotteryNumVect.push_back(64);
 
 	// back gets the value in the final index
-	cout& lt; &lt; "Final Value " & lt; &lt; lotteryNumVect.back()& lt; &lt; endl;
+	cout << "Final Value "  << lotteryNumVect.back() << endl;
 
 	// pop_back removes the final element
 	lotteryNumVect.pop_back();
 
 	// front returns the first element
-	cout& lt; &lt; "First Element " & lt; &lt; lotteryNumVect.front()& lt; &lt; endl;
+	cout << "First Element "  << lotteryNumVect.front() << endl;
 
 	// back returns the last element
-	cout& lt; &lt; "Last Element " & lt; &lt; lotteryNumVect.back()& lt; &lt; endl;
+	cout << "Last Element "  << lotteryNumVect.back() << endl;
 
 	// empty tells you if the vector is empty
-	cout& lt; &lt; "Vector Empty " & lt; &lt; lotteryNumVect.empty()& lt; &lt; endl;
+	cout << "Vector Empty "  << lotteryNumVect.empty() << endl;
 
 	// size returns the total number of elements
-	cout& lt; &lt; "Number of Vector Elements " & lt; &lt; lotteryNumVect.size()& lt; &lt; endl;
+	cout << "Number of Vector Elements "  << lotteryNumVect.size() << endl;
 
 	// ---------- FUNCTIONS ----------
 	// Functions allow you to reuse and better organize your code
 
-	cout& lt; &lt; addNumbers(1)& lt; &lt; endl;
+	cout << addNumbers(1) << endl;
 
 	// You can't access values created in functions (Out of Scope)
 	// cout &lt;&lt; combinedValue &lt;&lt; endl;
 
-	cout& lt; &lt; addNumbers(1, 5, 6)& lt; &lt; endl;
+	cout << addNumbers(1, 5, 6) << endl;
 
-	cout& lt; &lt; "The factorial of 3 is " & lt; &lt; getFactorial(3)& lt; &lt; endl;
+	cout << "The factorial of 3 is "  << getFactorial(3) << endl;
 
 
 	// ---------- POINTERS ----------
@@ -172,66 +172,66 @@ int main() {
 	int myAge = 39;
 	char myGrade = 'A';
 
-	cout& lt; &lt; "Size of int " & lt; &lt; sizeof(myAge)& lt; &lt; endl;
-	cout& lt; &lt; "Size of char " & lt; &lt; sizeof(myGrade)& lt; &lt; endl;
+	cout << "Size of int "  << sizeof(myAge) << endl;
+	cout << "Size of char "  << sizeof(myGrade) << endl;
 
 	// You can reference the box (memory address) where data is stored with
-	// the &amp; reference operator
+	// the & reference operator
 
-	cout& lt; &lt; "myAge is located at " & lt; &lt; &amp; myAge& lt; &lt; endl;
+	cout << "myAge is located at "  << & myAge << endl;
 
 	// A pointer can store a memory address
 	// The data type must be the same as the data referenced and it is followed
 	// by a *
 
-	int* agePtr = &amp; myAge;
+	int* agePtr = & myAge;
 
 	// You can access the memory address and the data
-	cout& lt; &lt; "Address of pointer " & lt; &lt; agePtr& lt; &lt; endl;
+	cout << "Address of pointer "  << agePtr << endl;
 
 	// * is the dereference or indirection operator
-	cout& lt; &lt; "Data at memory address " & lt; &lt; *agePtr& lt; &lt; endl;
+	cout << "Data at memory address "  << *agePtr << endl;
 
 	int badNums[5] = { 4, 13, 14, 24, 34 };
 	int* numArrayPtr = badNums;
 
 	// You can increment through an array using a pointer with ++ or --
-	cout& lt; &lt; "Address " & lt; &lt; numArrayPtr& lt; &lt; " Value " & lt; &lt; *numArrayPtr& lt; &lt; endl;
+	cout << "Address "  << numArrayPtr << " Value "  << *numArrayPtr << endl;
 	numArrayPtr++;
-	cout& lt; &lt; "Address " & lt; &lt; numArrayPtr& lt; &lt; " Value " & lt; &lt; *numArrayPtr& lt; &lt; endl;
+	cout << "Address "  << numArrayPtr << " Value "  << *numArrayPtr << endl;
 
 	// An array name is just a pointer to the array
-	cout& lt; &lt; "Address " & lt; &lt; badNums& lt; &lt; " Value " & lt; &lt; *badNums& lt; &lt; endl;
+	cout << "Address "  << badNums << " Value "  << *badNums << endl;
 
 	// When you pass a variable to a function you are passing the value
 	// When you pass a pointer to a function you are passing a reference
 	// that can be changed
 
-	makeMeYoung(&amp; myAge);
+	makeMeYoung(&myAge);
 
-	cout& lt; &lt; "I'm " & lt; &lt; myAge& lt; &lt; " years old now" & lt; &lt; endl;
+	cout << "I'm "  << myAge << " years old now"  << endl;
 
-	// &amp; denotes that ageRef will be a reference to the assigned variable
-	int& amp; ageRef = myAge;
+	// & denotes that ageRef will be a reference to the assigned variable
+	int& ageRef = myAge;
 
-	cout& lt; &lt; "ageRef : " & lt; &lt; ageRef& lt; &lt; endl;
+	cout << "ageRef : "  << ageRef << endl;
 
 	// It can manipulate the other variables data
 	ageRef++;
 
-	cout& lt; &lt; "myAge : " & lt; &lt; myAge& lt; &lt; endl;
+	cout << "myAge : "  << myAge << endl;
 
 	// You can pass the reference to a function
 	actYourAge(ageRef);
 
-	cout& lt; &lt; "myAge : " & lt; &lt; myAge& lt; &lt; endl;
+	cout << "myAge : "  << myAge << endl;
 
 	// When deciding on whether to use pointers or references
 	// Use Pointers if you don't want to initialize at declaration, or if
 	// you need to assign another variable
 	// otherwise use a reference
 
-	// ---------- CLASSES &amp; OBJECTS ----------
+	// ---------- CLASSES & OBJECTS ----------
 	// Classes are the blueprints for modeling real world objects
 	// Real world objects have attributes, classes have members / variables
 	// Real world objects have abilities, classes have methods / functions
@@ -246,25 +246,25 @@ int main() {
 	fred.setName("Fred");
 
 	// Get the values for the Animal
-	cout& lt; &lt; fred.getName()& lt; &lt; " is " & lt; &lt; fred.getHeight()& lt; &lt; " cms tall and "
-		& lt; &lt; fred.getWeight()& lt; &lt; " kgs in weight" & lt; &lt; endl;
+	cout << fred.getName() << " is "  << fred.getHeight() << " cms tall and "
+		 << fred.getWeight() << " kgs in weight"  << endl;
 
 	fred.setAll(34, 12, "Fred");
 
-	cout& lt; &lt; fred.getName()& lt; &lt; " is " & lt; &lt; fred.getHeight()& lt; &lt; " cms tall and "
-		& lt; &lt; fred.getWeight()& lt; &lt; " kgs in weight" & lt; &lt; endl;
+	cout << fred.getName() << " is "  << fred.getHeight() << " cms tall and "
+		 << fred.getWeight() << " kgs in weight"  << endl;
 
 	// Creating an object using the constructor
 	Animal tom(36, 15, "Tom");
 
-	cout& lt; &lt; tom.getName()& lt; &lt; " is " & lt; &lt; tom.getHeight()& lt; &lt; " cms tall and "
-		& lt; &lt; tom.getWeight()& lt; &lt; " kgs in weight" & lt; &lt; endl;
+	cout << tom.getName() << " is "  << tom.getHeight() << " cms tall and "
+		 << tom.getWeight() << " kgs in weight"  << endl;
 
 	// Demonstrate the inheriting class Dog
 	Dog spot(38, 16, "Spot", "Woof");
 
 	// static methods are called by using the class name and the scope operator
-	cout& lt; &lt; "Number of Animals " & lt; &lt; Animal::getNumOfAnimals()& lt; &lt; endl;
+	cout << "Number of Animals "  << Animal::getNumOfAnimals() << endl;
 
 	spot.getSound();
 
@@ -356,7 +356,7 @@ using namespace std;
 
 class Animal {
 public:
-	virtual void makeSound() { cout& lt; &lt; "The Animal says grrrr" & lt; &lt; endl; }
+	virtual void makeSound() { cout << "The Animal says grrrr"  << endl; }
 
 	// The Animal class could be a capability class that exists
 	// only to be derived from by containing only virtual methods
@@ -365,12 +365,12 @@ public:
 
 class Cat : public Animal {
 public:
-	void makeSound() { cout& lt; &lt; "The Cat says meow" & lt; &lt; endl; }
+	void makeSound() { cout << "The Cat says meow"  << endl; }
 };
 
 class Dog : public Animal {
 public:
-	void makeSound() { cout& lt; &lt; "The Dog says woof" & lt; &lt; endl; }
+	void makeSound() { cout << "The Dog says woof"  << endl; }
 };
 
 // An abstract data type is a class that acts as the base to other classes
@@ -385,8 +385,8 @@ public:
 
 class StationWagon : public Car {
 public:
-	int getNumWheels() { cout& lt; &lt; "Station Wagon has 4 Wheels" & lt; &lt; endl; }
-	int getNumDoors() { cout& lt; &lt; "Station Wagon has 4 Doors" & lt; &lt; endl; }
+	int getNumWheels() { cout << "Station Wagon has 4 Wheels"  << endl; }
+	int getNumDoors() { cout << "Station Wagon has 4 Doors"  << endl; }
 	StationWagon() { }
 	~StationWagon();
 };

@@ -56,6 +56,12 @@ int main() {
 	cout << "4 / 5 = " << 4 / 5 << endl;
 	cout << "(float) 4 / 5 = " << (float)4 / 5 << endl << endl;
 
+		// User input.
+	string yourName;
+	cout << "What is your name? ";
+	getline(cin, yourName);
+	cout << "Hello " << yourName << endl << endl;
+
 	// |ARRAYS|:
 		// Constructing.
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
@@ -189,8 +195,10 @@ int main() {
 	}
 
 	// |STRINGS|:
+	// TODO:  Strings
 
 	// |VECTORS|:
+	// TODO:  Vectors
 
 	return 0;
 }
@@ -225,4 +233,84 @@ void makeMeYoung(int* age) { // Since I'm getting a pointer use int*.
 	// A function that receives a reference can manipulate the value globally.
 void actYourAge(int& age) {
 	age = 39;
+}
+
+// |CLASS|:
+	// TODO: Class.
+
+class Animal {
+	// private variables are only available to methods in the class
+private:
+	int height;
+	int weight;
+	string name;
+
+	// A static variable shares the same value with every object in the class
+	static int numOfAnimals;
+
+	// Public variables can be accessed by anything with access to the object
+public:
+	int getHeight() { return height; }
+	int getWeight() { return weight; }
+	string getName() { return name; }
+	void setHeight(int cm) { height = cm; }
+	void setWeight(int kg) { weight = kg; }
+	void setName(string dogName) { name = dogName; }
+
+	// Declared as a prototype
+	void setAll(int, int, string);
+
+	// Declare the constructor
+	Animal(int, int, string);
+
+	// Declare the deconstructor
+	~Animal();
+
+	// An overloaded constructor called when no data is passed
+	Animal();
+
+	// protected members are available to members of the same class and
+	// sub classes
+
+	// Static methods aren't attached to an object and can only access
+	// static member variables
+	static int getNumOfAnimals() { return numOfAnimals; }
+
+	// This method will be overwritten in Dog
+	void toString();
+};
+
+int Animal::numOfAnimals = 0;
+
+void Animal::setAll(int height, int weight, string name) {
+	// This is used to refer to an object created of this class type
+	this->height = height;
+	this->weight = weight;
+	this->name = name;
+	Animal::numOfAnimals++;
+}
+
+// A constructor is called when an object is created
+Animal::Animal(int height, int weight, string name) {
+	this->height = height;
+	this->weight = weight;
+	this->name = name;
+}
+
+// A constructor called when no attributes are passed
+Animal::Animal() {
+	this->height = 0;
+	this->weight = 0;
+	numOfAnimals++;
+}
+
+// The destructor is called when an object is destroyed
+Animal::~Animal() {
+	cout << "Animal " << this->name << " destroyed" << endl;
+}
+
+// This method prints object info to screen and will be overwritten
+void Animal::toString() {
+	cout << this->name << " is " << this->height << " cms tall and "
+		<< this->weight << " kgs in weight" << endl;
 }

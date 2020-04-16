@@ -81,6 +81,8 @@ void Animal::toString() {
 		<< this->weight << " kgs in weight" << endl;
 }
 
+
+//------------------------------------------------------------------------------------
 // We can inherit the variables and methods of other classes
 class Dog : public Animal {
 private:
