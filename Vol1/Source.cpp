@@ -204,12 +204,12 @@ int addNumbers(int firstNum, int secondNum = 0) { //secondNum is an optional par
 	return combinedValue;
 }
 
-// An overloaded function has the same name, but different attributes.
+	// An overloaded function has the same name, but different attributes.
 int addNumbers(int firstNum, int secondNum, int thirdNum) {
 	return firstNum + secondNum + thirdNum;
 }
 
-// A recursive function is one that calls itself.
+	// A recursive function is one that calls itself.
 int getFactorial(int number) {
 	int sum;
 	if (number == 1) sum = 1;
@@ -223,7 +223,7 @@ void makeMeYoung(int* age) { // Since I'm getting a pointer use int*
 	*age = 21;
 }
 
-// A function that receives a reference can manipulate the value globally.
+	// A function that receives a reference can manipulate the value globally.
 void actYourAge(int& age) {
 	age = 39;
 }
