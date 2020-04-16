@@ -12,7 +12,6 @@ int getFactorial(int);
 void makeMeYoung(int*);
 
 int main() {
-	addNumbers(5,5);
 	// ARITHMETIC
 	// operators are +, -, *, /, %, ++, --
 
@@ -36,6 +35,7 @@ int main() {
 	printf("Hello World!\n"); // C style
 	cout << "Hello " << "World!" << endl << endl; // C++ style, use this.
 
+
 	// Declaring variable.
 	int myAge = 69;
 	cout << "myAge = " << myAge << endl;
@@ -46,16 +46,23 @@ int main() {
 	// Data type modifiers:
 		// unsigned, const, static.
 
-	// Typecasting
+	// Setting integers in hexadecimal.
+	int hex_integer = 0xFF;
+	cout << "hex_integer: " << hex_integer << endl;
+	cout << "hex_integer (std::hex)" << std::hex << hex_integer << endl; // Displaying integers in hexadecimal format.
+	cout << "hex_integer (std::dec)" << std::dec << hex_integer << endl; // Displaying integers in decimal format (default).
+	cout << "hex_integer (std::oct)" << std::oct << hex_integer << endl; // Displaying integers in octal format.
+
+	// Typecasting.
 	cout << "4 / 5 = " << 4 / 5 << endl;
 	cout << "(float) 4 / 5 = " << (float)4 / 5 << endl << endl;
 
 	// ARRAYS
-	// Constructing
+	// Constructing.
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
 	int myFavNumsMulti[3][3] = { {4, 13, 14}, {4, 13, 14},{14, 24, 34 } };
 
-	// Indexing
+	// Indexing.
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
@@ -66,12 +73,12 @@ int main() {
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
 	// CONTROL FLOW
-		// If statement
+		// If statement.
 	if (true) {}
 	else if (false) {}
 	else {}
 
-	// Switch statement
+	// Switch statement.
 	switch (myAge) {
 	case 10: cout << "myAge is 10!" << endl; break;
 	case 20: cout << "myAge is 20!" << endl; break;
@@ -81,19 +88,19 @@ int main() {
 
 	cout << endl;
 
-	// Conditional assignment
+	// Conditional assignment.
 	bool logical_statement = true;
 	string value_if_true = "true";
 	string value_if_false = "false";
 	string condional_assignment = logical_statement ? value_if_true : value_if_false;
 
-	// For statement
+	// For statement.
 	for (int i = 0; i <= 10; ++i) { //use preincrement (++i) over post-incrment (i++) in for loops).
 		continue; //skip to next iteration of loop.
 		break; //break out of loop.
 	}
 
-	// While statement
+	// While statement.
 	int condition = 0;
 	while (condition < 10) {
 		cout << "condition = " << condition << endl;
@@ -102,7 +109,7 @@ int main() {
 
 	cout << endl;
 
-	// Do-while statement
+	// Do-while statement.
 	condition = 0;
 	do {
 		cout << "condition = " << condition << endl;
@@ -126,23 +133,23 @@ int main() {
 	}
 
 	// FILE I/O
-		// We can read and write to files using text or machine readable binary
+		// We can read and write to files using text or machine readable binary.
 	string steveQuote = "A day without sunshine is like, you know, night";
 
-	// Create an output filestream and if the file doesn't exist create it
+	// Create an output filestream and if the file doesn't exist create it.
 	ofstream writer("stevequote.txt");
 
-	// Verify that the file stream object was created
+	// Verify that the file stream object was created.
 	if (!writer) {
 		cout << "Error opening file" << endl;
-		// Signal that an error occurred
+		// Signal that an error occurred.
 		return -1;
 	}
 	else {
-		// Write the text to the file
+		// Write the text to the file.
 		writer << steveQuote << endl;
 
-		// Close the file
+		// Close the file.
 		writer.close();
 	}
 
@@ -155,7 +162,7 @@ int main() {
 
 	if (!writer2) {
 		cout << "Error opening file" << endl;
-		// Signal that an error occurred
+		// Signal that an error occurred.
 		return -1;
 	}
 	else {
@@ -164,7 +171,7 @@ int main() {
 	}
 	char letter;
 
-	// Read characters from a file using an input file stream
+	// Read characters from a file using an input file stream.
 	ifstream reader("stevequote.txt");
 
 	if (!reader) {
@@ -172,9 +179,9 @@ int main() {
 		return -1;
 	}
 	else {
-		// Read each character from the stream until end of file
+		// Read each character from the stream until end of file.
 		for (int i = 0; !reader.eof(); i++) {
-			// Get the next letter and output it
+			// Get the next letter and output it.
 			reader.get(letter);
 			cout << letter;
 		}
@@ -190,19 +197,19 @@ int main() {
 }
 
 // FUNCTIONS
-	// Declaring
+	// Declaring.
 int addNumbers(int firstNum, int secondNum = 0) { //secondNum is an optional parameter with default value 0
 	int combinedValue = firstNum + secondNum;
 
 	return combinedValue;
 }
 
-// An overloaded function has the same name, but different attributes
+// An overloaded function has the same name, but different attributes.
 int addNumbers(int firstNum, int secondNum, int thirdNum) {
 	return firstNum + secondNum + thirdNum;
 }
 
-// A recursive function is one that calls itself
+// A recursive function is one that calls itself.
 int getFactorial(int number) {
 	int sum;
 	if (number == 1) sum = 1;
@@ -210,14 +217,13 @@ int getFactorial(int number) {
 	return sum;
 }
 
-// Since I'm getting a pointer use int*
-// Refer to the referenced variable with *age
-void makeMeYoung(int* age) {
-	cout << "I used to be " << *age << endl;
+
+void makeMeYoung(int* age) { // Since I'm getting a pointer use int*
+	cout << "I used to be " << *age << endl; // Refer to the referenced variable with *age.
 	*age = 21;
 }
 
-// A function that receives a reference can manipulate the value globally
+// A function that receives a reference can manipulate the value globally.
 void actYourAge(int& age) {
 	age = 39;
 }
