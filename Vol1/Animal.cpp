@@ -50,35 +50,35 @@ int Animal::numOfAnimals = 0;
 // Define the protoype method setAll
 void Animal::setAll(int height, int weight, string name) {
 	// This is used to refer to an object created of this class type
-	this -> height = height;
-	this -> weight = weight;
-	this -> name = name;
+	this->height = height;
+	this->weight = weight;
+	this->name = name;
 	Animal::numOfAnimals++;
 }
 
 // A constructor is called when an object is created
 Animal::Animal(int height, int weight, string name) {
-	this -> height = height;
-	this -> weight = weight;
-	this -> name = name;
+	this->height = height;
+	this->weight = weight;
+	this->name = name;
 }
 
 // The destructor is called when an object is destroyed
 Animal::~Animal() {
-	cout << "Animal " << this -> name << " destroyed" << endl;
+	cout << "Animal " << this->name << " destroyed" << endl;
 }
 
 // A constructor called when no attributes are passed
 Animal::Animal() {
-	this -> height = 0;
-	this -> weight = 0;
+	this->height = 0;
+	this->weight = 0;
 	numOfAnimals++;
 }
 
 // This method prints object info to screen and will be overwritten
 void Animal::toString() {
-	cout << this -> name << " is " << this -> height<< " cms tall and "
-		<< this -> weight<< " kgs in weight" << endl;
+	cout << this->name << " is " << this->height << " cms tall and "
+		<< this->weight << " kgs in weight" << endl;
 }
 
 // We can inherit the variables and methods of other classes
@@ -86,7 +86,7 @@ class Dog : public Animal {
 private:
 	string sound = "Woof";
 public:
-	void getSound() { cout<< sound<< endl; }
+	void getSound() { cout << sound << endl; }
 
 	// Declare the constructor
 	Dog(int, int, string, string);
@@ -103,14 +103,14 @@ public:
 // constructor and then handles the attribute bark that remains
 Dog::Dog(int height, int weight, string name, string bark) :
 	Animal(height, weight, name) {
-	this -> sound = bark;
+	this->sound = bark;
 }
 
 // toString method overwritten
 void Dog::toString() {
 	// Because the attributes were private in Animal they must be retrieved
 	// by called the get methods
-	cout<< this -> getName() << " is " << this -> getHeight()<<
-	" cms tall and " << this -> getWeight ()<< " kgs in weight and says " <<
-	this -> sound<< endl;
+	cout << this->getName() << " is " << this->getHeight() <<
+		" cms tall and " << this->getWeight() << " kgs in weight and says " <<
+		this->sound << endl;
 }
