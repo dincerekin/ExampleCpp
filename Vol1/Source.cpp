@@ -6,8 +6,8 @@
 using namespace std;
 
 int main() {
-//ARITHMETIC
-	//operators are +, -, *, /, %, ++, --
+	// ARITHMETIC
+	// operators are +, -, *, /, %, ++, --
 
 	cout << "5 + 2 = " << 5 + 2 << endl;
 	cout << "5 - 2 = " << 5 - 2 << endl;
@@ -39,33 +39,32 @@ int main() {
 	// Data type modifiers:
 		// unsigned, const, static.
 
-
-	//Typecasting
+	// Typecasting
 	cout << "4 / 5 = " << 4 / 5 << endl;
 	cout << "(float) 4 / 5 = " << (float)4 / 5 << endl << endl;
 
-//ARRAYS
-	//Constructing
+	// ARRAYS
+	// Constructing
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
-	int myFavNumsMulti[3][3] = { {4, 13, 14}, {4, 13, 14},{14, 24, 34 }};
+	int myFavNumsMulti[3][3] = { {4, 13, 14}, {4, 13, 14},{14, 24, 34 } };
 
-	//Indexing
+	// Indexing
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
-	//Assigning
+	// Assigning
 	myFavNums[0] = 69;
 	myFavNumsMulti[0][0] = 69;
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
-//CONTROL FLOW
-	//If statement
+	// CONTROL FLOW
+		// If statement
 	if (true) {}
 	else if (false) {}
 	else {}
 
-	//Switch statement
+	// Switch statement
 	switch (myAge) {
 	case 10: cout << "myAge is 10!" << endl; break;
 	case 20: cout << "myAge is 20!" << endl; break;
@@ -75,28 +74,28 @@ int main() {
 
 	cout << endl;
 
-	//Conditional assignment
+	// Conditional assignment
 	bool logical_statement = true;
 	string value_if_true = "true";
 	string value_if_false = "false";
 	string condional_assignment = logical_statement ? value_if_true : value_if_false;
 
-	//For statement
-	for (int i = 0; i<=10; ++i) { //use preincrement (++i) over post-incrment (i++) in for loops).
+	// For statement
+	for (int i = 0; i <= 10; ++i) { //use preincrement (++i) over post-incrment (i++) in for loops).
 		continue; //skip to next iteration of loop.
 		break; //break out of loop.
 	}
 
-	//While statement
+	// While statement
 	int condition = 0;
 	while (condition < 10) {
-		cout << "condition = "<< condition << endl;
+		cout << "condition = " << condition << endl;
 		condition++;
 	}
 
 	cout << endl;
 
-	//Do-while statement
+	// Do-while statement
 	condition = 0;
 	do {
 		cout << "condition = " << condition << endl;
@@ -105,9 +104,9 @@ int main() {
 
 	cout << endl;
 
-//EXCEPTION HANDLING
-	// Use this when trying to execute code that may raise an error.
-	// Only use this when the error is the result of something external to this program.
+	// EXCEPTION HANDLING
+		// Use this when trying to execute code that may raise an error.
+		// Only use this when the error is the result of something external to this program.
 	int number = 0;
 	try {
 		if (number != 0) {
@@ -119,8 +118,8 @@ int main() {
 		cout << number << " is not valid input" << endl;
 	}
 
-//FILE I/O
-	// We can read and write to files using text or machine readable binary
+	// FILE I/O
+		// We can read and write to files using text or machine readable binary
 	string steveQuote = "A day without sunshine is like, you know, night";
 
 	// Create an output filestream and if the file doesn't exist create it
@@ -176,17 +175,13 @@ int main() {
 		reader.close();
 	}
 
-//STRINGS
+	// STRINGS
 
-
-
-//VECTORS
+	// VECTORS
 
 	return 0;
 }
 
-//FUNCTIONS
+// FUNCTIONS
 
-
-
-//CLASSES
+// CLASSES
