@@ -14,7 +14,7 @@ void makeMeYoung(int*);
 int main() {
 	// ARITHMETIC
 		// operators are +, -, *, /, %, ++, --
-
+	
 	cout << "5 + 2 = " << 5 + 2 << endl;
 	cout << "5 - 2 = " << 5 - 2 << endl;
 	cout << "5 * 2 = " << 5 * 2 << endl;
