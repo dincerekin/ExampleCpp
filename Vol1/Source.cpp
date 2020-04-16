@@ -12,9 +12,9 @@ int getFactorial(int);
 void makeMeYoung(int*);
 
 int main() {
-	// ARITHMETIC
+	// |ARITHMETIC|:
 		// operators are +, -, *, /, %, ++, --
-	
+
 	cout << "5 + 2 = " << 5 + 2 << endl;
 	cout << "5 - 2 = " << 5 - 2 << endl;
 	cout << "5 * 2 = " << 5 * 2 << endl;
@@ -35,16 +35,15 @@ int main() {
 	printf("Hello World!\n"); // C style
 	cout << "Hello " << "World!" << endl << endl; // C++ style, use this.
 
-
 		// Declaring variable.
 	int myAge = 69;
 	cout << "myAge = " << myAge << endl;
 	cout << "sizeof(myAge) = " << sizeof(myAge) << endl << endl;
 
 		// Data types:
-			// short, int, float, double, bool, char, string, void.
+			// short, long, int, float, double, bool, char, string, void.
 		// Data type modifiers:
-			// unsigned, const, static.
+			// unsigned, const, static
 
 		// Setting integers in hexadecimal.
 	int hex_integer = 0xFF;
@@ -57,7 +56,7 @@ int main() {
 	cout << "4 / 5 = " << 4 / 5 << endl;
 	cout << "(float) 4 / 5 = " << (float)4 / 5 << endl << endl;
 
-	// ARRAYS
+	// |ARRAYS|:
 		// Constructing.
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
 	int myFavNumsMulti[3][3] = { {4, 13, 14}, {4, 13, 14},{14, 24, 34 } };
@@ -72,7 +71,7 @@ int main() {
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
-	// CONTROL FLOW
+	// |CONTROL FLOW|:
 		// If statement.
 	if (true) {}
 	else if (false) {}
@@ -118,7 +117,7 @@ int main() {
 
 	cout << endl;
 
-	// EXCEPTION HANDLING
+	// |EXCEPTION HANDLING|:
 		// Use this when trying to execute code that may raise an error.
 		// Only use this when the error is the result of something external to this program.
 	int number = 0;
@@ -132,7 +131,7 @@ int main() {
 		cout << number << " is not valid input" << endl << endl;
 	}
 
-	// FILE I/O
+	// |FILE I/O|:
 		// We can read and write to files using text or machine readable binary.
 	string steveQuote = "A day without sunshine is like, you know, night";
 
@@ -189,27 +188,27 @@ int main() {
 		reader.close();
 	}
 
-	// STRINGS
+	// |STRINGS|:
 
-	// VECTORS
+	// |VECTORS|:
 
 	return 0;
 }
 
-// FUNCTIONS
-		// Declaring.
+// |FUNCTIONS|:
+	// Declaring.
 int addNumbers(int firstNum, int secondNum = 0) { //secondNum is an optional parameter with default value 0.
 	int combinedValue = firstNum + secondNum;
 
 	return combinedValue;
 }
 
-		// An overloaded function has the same name, but different attributes.
+	// An overloaded function has the same name, but different attributes.
 int addNumbers(int firstNum, int secondNum, int thirdNum) {
 	return firstNum + secondNum + thirdNum;
 }
 
-		// A recursive function is one that calls itself.
+	// A recursive function is one that calls itself.
 int getFactorial(int number) {
 	int sum;
 	if (number == 1) sum = 1;
@@ -223,9 +222,7 @@ void makeMeYoung(int* age) { // Since I'm getting a pointer use int*.
 	*age = 21;
 }
 
-		// A function that receives a reference can manipulate the value globally.
+	// A function that receives a reference can manipulate the value globally.
 void actYourAge(int& age) {
 	age = 39;
 }
-
-// CLASSES

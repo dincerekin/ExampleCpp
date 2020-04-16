@@ -1,11 +1,4 @@
-// ---------- CLASSES ----------
-// classes start with the name class
 
-
-
-// ---------- END OF CLASSES ----------
-
-// This is where execution begins. Attributes can be sent to main
 int main() {
 	// cout outputs text and a carriage return with endl
 	// Statements must end with a semicolon
