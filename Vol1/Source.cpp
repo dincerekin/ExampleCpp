@@ -5,7 +5,14 @@
 
 using namespace std;
 
+// Function prototypes. These are used so the meat of functions can be placed after main().
+int addNumbers(int, int);
+int addNumbers(int,int,int);
+int getFactorial(int);
+void makeMeYoung(int*);
+
 int main() {
+	addNumbers(5,5);
 	// ARITHMETIC
 	// operators are +, -, *, /, %, ++, --
 
@@ -183,5 +190,36 @@ int main() {
 }
 
 // FUNCTIONS
+	// Declaring
+int addNumbers(int firstNum, int secondNum = 0) { //secondNum is an optional parameter with default value 0
+	int combinedValue = firstNum + secondNum;
+
+	return combinedValue;
+}
+
+// An overloaded function has the same name, but different attributes
+int addNumbers(int firstNum, int secondNum, int thirdNum) {
+	return firstNum + secondNum + thirdNum;
+}
+
+// A recursive function is one that calls itself
+int getFactorial(int number) {
+	int sum;
+	if (number == 1) sum = 1;
+	else sum = (getFactorial(number - 1) * number);
+	return sum;
+}
+
+// Since I'm getting a pointer use int*
+// Refer to the referenced variable with *age
+void makeMeYoung(int* age) {
+	cout << "I used to be " << *age << endl;
+	*age = 21;
+}
+
+// A function that receives a reference can manipulate the value globally
+void actYourAge(int& age) {
+	age = 39;
+}
 
 // CLASSES
