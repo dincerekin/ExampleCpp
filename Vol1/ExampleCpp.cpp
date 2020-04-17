@@ -235,8 +235,6 @@ void actYourAge(int& age) {
 }
 
 // |CLASS|:
-	// TODO: Class.
-
 class Animal {
 	// Private variables are only available to methods in the class.
 private:
