@@ -85,7 +85,7 @@ int main() {
 	cout << "5-- = " << five-- << endl;
 	cout << "--5 = " << --five << endl << endl;
 
-	// Shorth& assignment operators
+	// Shorthand assignment operators
 		// a += b is equivalent to a = a + b
 		// There is also -=, *=, /=, %=
 
@@ -181,7 +181,7 @@ int main() {
 
 	cout << endl;
 
-	// |EXCEPTION H&LING|:
+	// |EXCEPTION HANDLING|:
 		// Use this when trying to execute code that may raise an error.
 		// Only use this when the error is the result of something external to this program.
 	int number = 0;
@@ -252,11 +252,22 @@ int main() {
 		reader.close();
 	}
 
+
+	// |POINTERS|:
+	// TODO: Pointers.
+
+
+	// |REFERENCES|:
+	// TODO:  References.
+
+
 	// |STRINGS|:
 	// TODO:  Strings
 
+
 	// |VECTORS|:
 	// TODO:  Vectors
+
 
 	// |CLASSES|:
 		// Instantiate an Animal object with name Fred.
@@ -368,7 +379,7 @@ void Animal::toString() {
 
 
 // Dog constructor passes the right attributes to the superclass
-// constructor & then h&les the attribute bark that remains
+// constructor & then handles the attribute bark that remains
 Dog::Dog(int height, int weight, string name, string bark) :
 	Animal(height, weight, name) {
 	this->sound = bark;
