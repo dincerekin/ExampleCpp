@@ -11,6 +11,64 @@ int addNumbers(int, int, int);
 int getFactorial(int);
 void makeMeYoung(int*);
 
+// |CLASSES|:
+class Animal {
+	// Private variables are only available to methods in the class.
+private:
+	int height;
+	int weight;
+	string name;
+
+	// A static variable shares the same value with every object in the class.
+	static int numOfAnimals;
+
+	// Public variables can be accessed by anything with access to the object.
+public:
+	int getHeight() { return height; }
+	int getWeight() { return weight; }
+	string getName() { return name; }
+	void setHeight(int cm) { height = cm; }
+	void setWeight(int kg) { weight = kg; }
+	void setName(string dogName) { name = dogName; }
+
+	// Declared as a prototype.
+	void setAll(int, int, string);
+
+	// Declare the constructor.
+	Animal(int, int, string);
+
+	// Declare the deconstructor.
+	~Animal();
+
+	// An overloaded constructor called when no data is passed.
+	Animal();
+
+	// Protected members are available to members of the same class & sub classes.
+
+	// Static methods aren't attached to an object & can only access static member variables.
+	static int getNumOfAnimals() { return numOfAnimals; }
+
+	// This method will be overwritten in Dog.
+	void toString();
+};
+
+// We can inherit the variables & methods of other classes.
+class Dog : public Animal {
+private:
+	string sound = "WOOF!!";
+public:
+	void getSound() { cout << sound << endl; }
+
+	// Declare the constructor.
+	Dog(int, int, string, string);
+
+	// Declare the default constructor & call the default superclass constructor.
+	Dog() : Animal() {};
+
+	// Overwrite toString.
+	void toString();
+};
+
 int main() {
 	// |ARITHMETIC|:
 		// operators are +, -, *, /, %, ++, --
@@ -27,7 +85,7 @@ int main() {
 	cout << "5-- = " << five-- << endl;
 	cout << "--5 = " << --five << endl << endl;
 
-	// Shorthand assignment operators
+	// Shorth& assignment operators
 		// a += b is equivalent to a = a + b
 		// There is also -=, *=, /=, %=
 
@@ -91,7 +149,7 @@ int main() {
 	default: cout << "myAge is not listed!" << endl << endl; break;
 	}
 
-	cout << endl;
+	cout << endl; //outputs a blank line to console (helps readability).
 
 	// Conditional assignment.
 	bool logical_statement = true;
@@ -123,7 +181,7 @@ int main() {
 
 	cout << endl;
 
-	// |EXCEPTION HANDLING|:
+	// |EXCEPTION H&LING|:
 		// Use this when trying to execute code that may raise an error.
 		// Only use this when the error is the result of something external to this program.
 	int number = 0;
@@ -138,10 +196,10 @@ int main() {
 	}
 
 	// |FILE I/O|:
-		// We can read and write to files using text or machine readable binary.
+		// We can read & write to files using text or machine readable binary.
 	string steveQuote = "A day without sunshine is like, you know, night";
 
-	// Create an output filestream and if the file doesn't exist create it.
+	// Create an output filestream & if the file doesn't exist create it.
 	ofstream writer("stevequote.txt");
 
 	// Verify that the file stream object was created.
@@ -186,7 +244,7 @@ int main() {
 	else {
 		// Read each character from the stream until end of file.
 		for (int i = 0; !reader.eof(); i++) {
-			// Get the next letter and output it.
+			// Get the next letter & output it.
 			reader.get(letter);
 			cout << letter;
 		}
@@ -199,6 +257,45 @@ int main() {
 
 	// |VECTORS|:
 	// TODO:  Vectors
+
+	// |CLASSES|:
+		// Instantiate an Animal object with name Fred.
+	Animal fred;
+
+		// Setting attributes.
+	fred.setHeight(33);
+	fred.setWeight(10);
+	fred.setName("Fred");
+
+		// Getting attribute values from object.
+	cout << fred.getName() << " is " << fred.getHeight() << " cms tall & "
+		<< fred.getWeight() << " kgs in weight" << endl;
+
+	fred.setAll(34, 12, "Fred");
+
+	cout << fred.getName() << " is " << fred.getHeight() << " cms tall & "
+		<< fred.getWeight() << " kgs in weight" << endl;
+
+		// Creating an object using the constructor.
+	Animal tom(36, 15, "Tom");
+
+	cout << tom.getName() << " is " << tom.getHeight() << " cms tall & "
+		<< tom.getWeight() << " kgs in weight" << endl;
+
+		// Demonstrate the inheriting class Dog.
+	Dog spot(38, 16, "Spot", "Woof");
+
+		// Static methods are called by using the class name & the scope operator.
+	cout << "Number of Animals " << Animal::getNumOfAnimals() << endl;
+
+	spot.getSound();
+
+		// Test the toString method that will be overwritten.
+	tom.toString();
+	spot.toString();
+
+		// We can call the superclass version of a method with the class name & the scope operator.
+	spot.Animal::toString();
 
 	return 0;
 }
@@ -234,47 +331,6 @@ void actYourAge(int& age) {
 	age = 39;
 }
 
-// |CLASS|:
-class Animal {
-	// Private variables are only available to methods in the class.
-private:
-	int height;
-	int weight;
-	string name;
-
-	// A static variable shares the same value with every object in the class.
-	static int numOfAnimals;
-
-	// Public variables can be accessed by anything with access to the object.
-public:
-	int getHeight() { return height; }
-	int getWeight() { return weight; }
-	string getName() { return name; }
-	void setHeight(int cm) { height = cm; }
-	void setWeight(int kg) { weight = kg; }
-	void setName(string dogName) { name = dogName; }
-
-	// Declared as a prototype.
-	void setAll(int, int, string);
-
-	// Declare the constructor.
-	Animal(int, int, string);
-
-	// Declare the deconstructor.
-	~Animal();
-
-	// An overloaded constructor called when no data is passed.
-	Animal();
-
-	// Protected members are available to members of the same class and sub classes.
-
-	// Static methods aren't attached to an object and can only access static member variables.
-	static int getNumOfAnimals() { return numOfAnimals; }
-
-	// This method will be overwritten in Dog.
-	void toString();
-};
-
 int Animal::numOfAnimals = 0;
 
 void Animal::setAll(int height, int weight, string name) {
@@ -304,31 +360,15 @@ Animal::~Animal() {
 	cout << "Animal " << this->name << " destroyed" << endl;
 }
 
-	// This method prints object info to screen and will be overwritten.
+	// This method prints object info to screen & will be overwritten.
 void Animal::toString() {
-	cout << this->name << " is " << this->height << " cms tall and "
+	cout << this->name << " is " << this->height << " cms tall & "
 		<< this->weight << " kgs in weight" << endl;
 }
 
-	// We can inherit the variables and methods of other classes.
-class Dog : public Animal {
-private:
-	string sound = "WOOF!!";
-public:
-	void getSound() { cout << sound << endl; }
-
-	// Declare the constructor.
-	Dog(int, int, string, string);
-
-	// Declare the default constructor and call the default superclass constructor.
-	Dog() : Animal() {};
-
-	// Overwrite toString.
-	void toString();
-};
 
 // Dog constructor passes the right attributes to the superclass
-// constructor and then handles the attribute bark that remains
+// constructor & then h&les the attribute bark that remains
 Dog::Dog(int height, int weight, string name, string bark) :
 	Animal(height, weight, name) {
 	this->sound = bark;
@@ -339,6 +379,6 @@ void Dog::toString() {
 	// Because the attributes were private in Animal they must be retrieved
 	// by called the get methods
 	cout << this->getName() << " is " << this->getHeight() <<
-		" cms tall and " << this->getWeight() << " kgs in weight and says " <<
+		" cms tall & " << this->getWeight() << " kgs in weight & says " <<
 		this->sound << endl;
 }
