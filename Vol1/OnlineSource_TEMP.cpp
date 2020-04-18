@@ -1,40 +1,3 @@
-
-int main() {
-	// cout outputs text and a carriage return with endl
-	// Statements must end with a semicolon
-	// Strings must be surrounded by "
-	// &lt;&lt; sends the text via standard output to the screen
-	cout << "Hello Internet"  << endl;
-
-	// ---------- VARIABLES / DATA TYPES ----------
-	// Variables start with a letter and can contain letters, numbers and _
-	// They are case sensitive
-
-	// A value that won't change is a constant
-	// Starts with const and it should be uppercase
-	const double PI = 3.1415926535;
-
-	// Other types include
-	// short int : At least 16 bits
-	// long int : At least 32 bits
-	// long long int : At least 64 bits
-	// unsigned int : Same size as signed version
-	// long double : Not less then double
-
-
-		// Allows for user input
-		// Pass the source and destination of the input
-		getline(cin, numberGuessed);
-
-		// stoi converts the string into an integer
-		intNumberGuessed = stoi(numberGuessed);
-		cout << intNumberGuessed << endl;
-
-		// We'll continue looping until the number entered is 4
-	} while (intNumberGuessed != 4);
-
-	cout << "You Win"  << endl;
-
 	// ---------- STRINGS ----------
 	// The string library class provides a string object
 	// You must always surround strings with "
@@ -116,41 +79,6 @@ int main() {
 	cout << yourName << endl;
 
 	// ---------- VECTORS ----------
-	// Vectors are like arrays, but their size can change
-
-	vector& lt; int& gt; lotteryNumVect(10);
-
-	int lotteryNumArray[5] = { 4, 13, 14, 24, 34 };
-
-	// Add the array to the vector starting at the beginning of the vector
-	lotteryNumVect.insert(lotteryNumVect.begin(), lotteryNumArray, lotteryNumArray + 3);
-
-	// Insert a value into the 5th index
-	lotteryNumVect.insert(lotteryNumVect.begin() + 5, 44);
-
-	// at gets the value in the specified index
-	cout << "Value in 5 "  << lotteryNumVect.at(5) << endl;
-
-	// push_back adds a value at the end of a vector
-	lotteryNumVect.push_back(64);
-
-	// back gets the value in the final index
-	cout << "Final Value "  << lotteryNumVect.back() << endl;
-
-	// pop_back removes the final element
-	lotteryNumVect.pop_back();
-
-	// front returns the first element
-	cout << "First Element "  << lotteryNumVect.front() << endl;
-
-	// back returns the last element
-	cout << "Last Element "  << lotteryNumVect.back() << endl;
-
-	// empty tells you if the vector is empty
-	cout << "Vector Empty "  << lotteryNumVect.empty() << endl;
-
-	// size returns the total number of elements
-	cout << "Number of Vector Elements "  << lotteryNumVect.size() << endl;
 
 	// ---------- FUNCTIONS ----------
 	// Functions allow you to reuse and better organize your code

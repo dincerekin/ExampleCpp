@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -109,12 +110,13 @@ int main() {
 	cout << "hex_integer (std::hex)" << std::hex << hex_integer << endl; // Displaying integers in hexadecimal format.
 	cout << "hex_integer (std::dec)" << std::dec << hex_integer << endl; // Displaying integers in decimal format (default).
 	cout << "hex_integer (std::oct)" << std::oct << hex_integer << endl; // Displaying integers in octal format.
+	cout << dec;
 
 		// Typecasting.
 	cout << "4 / 5 = " << 4 / 5 << endl;
 	cout << "(float) 4 / 5 = " << (float)4 / 5 << endl << endl;
 
-	// User input.
+		// User input.
 	string yourName;
 	cout << "What is your name? ";
 	getline(cin, yourName);
@@ -125,11 +127,11 @@ int main() {
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
 	int myFavNumsMulti[3][3] = { {4, 13, 14}, {4, 13, 14},{14, 24, 34 } };
 
-	// Indexing.
+		// Indexing.
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
-	// Assigning
+		// Assigning
 	myFavNums[0] = 69;
 	myFavNumsMulti[0][0] = 69;
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
@@ -141,7 +143,7 @@ int main() {
 	else if (false) {}
 	else {}
 
-	// Switch statement.
+		// Switch statement.
 	switch (myAge) {
 	case 10: cout << "myAge is 10!" << endl; break;
 	case 20: cout << "myAge is 20!" << endl; break;
@@ -151,19 +153,19 @@ int main() {
 
 	cout << endl; //outputs a blank line to console (helps readability).
 
-	// Conditional assignment.
+		// Conditional assignment.
 	bool logical_statement = true;
 	string value_if_true = "true";
 	string value_if_false = "false";
 	string condional_assignment = logical_statement ? value_if_true : value_if_false;
 
-	// For statement.
+		// For statement.
 	for (int i = 0; i <= 10; ++i) { //use preincrement (++i) over post-incrment (i++) in for loops).
 		continue; //skip to next iteration of loop.
 		break; //break out of loop.
 	}
 
-	// While statement.
+		// While statement.
 	int condition = 0;
 	while (condition < 5) {
 		cout << "condition = " << condition << endl;
@@ -172,7 +174,7 @@ int main() {
 
 	cout << endl;
 
-	// Do-while statement.
+		// Do-while statement.
 	condition = 0;
 	do {
 		cout << "condition = " << condition << endl;
@@ -199,10 +201,10 @@ int main() {
 		// We can read & write to files using text or machine readable binary.
 	string steveQuote = "A day without sunshine is like, you know, night";
 
-	// Create an output filestream & if the file doesn't exist create it.
+		// Create an output filestream & if the file doesn't exist create it.
 	ofstream writer("stevequote.txt");
 
-	// Verify that the file stream object was created.
+		// Verify that the file stream object was created.
 	if (!writer) {
 		cout << "Error opening file" << endl;
 		// Signal that an error occurred.
@@ -216,11 +218,11 @@ int main() {
 		writer.close();
 	}
 
-	// Open a stream to append to whats there with ios::app
-	// ios::binary : Treat the file as binary
-	// ios::in : Open a file to read input
-	// ios::trunc : Default
-	// ios::out : Open a file to write output
+		// Open a stream to append to whats there with ios::app
+		// ios::binary : Treat the file as binary
+		// ios::in : Open a file to read input
+		// ios::trunc : Default
+		// ios::out : Open a file to write output
 	ofstream writer2("stevequote.txt", ios::app);
 
 	if (!writer2) {
@@ -234,7 +236,7 @@ int main() {
 	}
 	char letter;
 
-	// Read characters from a file using an input file stream.
+		// Read characters from a file using an input file stream.
 	ifstream reader("stevequote.txt");
 
 	if (!reader) {
@@ -264,9 +266,53 @@ int main() {
 	// |STRINGS|:
 	// TODO:  Strings
 
+		// stoi converts the string into an integer.
+	string stringVar = "100";
+	int intVar = stoi(stringVar);
+	cout << intVar << endl;
+
+		// stof converts the string into a float.
+	float floatVar = stof(stringVar);
+	cout << floatVar << endl;
+	cout << endl;
 
 	// |VECTORS|:
-	// TODO:  Vectors
+		// Vectors are like arrays, but their size can change.
+
+	vector <int> lotteryNumVect(10);
+
+	int lotteryNumArray[5] = { 4, 13, 14, 24, 34 };
+
+		// Add the array to the vector starting at the beginning of the vector
+	lotteryNumVect.insert(lotteryNumVect.begin(), lotteryNumArray, lotteryNumArray + 3);
+
+		// Insert a value into the 5th index
+	lotteryNumVect.insert(lotteryNumVect.begin() + 5, 44);
+
+		// at gets the value in the specified index
+	cout << "Value in 5 " << lotteryNumVect.at(5) << endl;
+
+		// push_back adds a value at the end of a vector
+	lotteryNumVect.push_back(64);
+
+		// back gets the value in the final index
+	cout << "Final Value " << lotteryNumVect.back() << endl;
+
+		// pop_back removes the final element
+	lotteryNumVect.pop_back();
+
+		// front returns the first element
+	cout << "First Element " << lotteryNumVect.front() << endl;
+
+		// back returns the last element
+	cout << "Last Element " << lotteryNumVect.back() << endl;
+
+		// empty tells you if the vector is empty
+	cout << "Vector Empty " << lotteryNumVect.empty() << endl;
+
+		// size returns the total number of elements
+	cout << "Number of Vector Elements " << lotteryNumVect.size() << endl;
+
 
 
 	// |CLASSES|:
