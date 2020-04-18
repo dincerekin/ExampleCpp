@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <iostream>
+#include <ios>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -73,6 +75,7 @@ public:
 int main() {
 	// |ARITHMETIC|:
 		// operators are +, -, *, /, %, ++, --
+	cout << "|ARITHMETIC|:" << endl << endl;
 
 	cout << "5 + 2 = " << 5 + 2 << endl;
 	cout << "5 - 2 = " << 5 - 2 << endl;
@@ -107,9 +110,9 @@ int main() {
 	// Setting integers in hexadecimal.
 	int hex_integer = 0xFF;
 	cout << "hex_integer: " << hex_integer << endl;
-	cout << "hex_integer (std::hex)" << std::hex << hex_integer << endl; // Displaying integers in hexadecimal format.
-	cout << "hex_integer (std::dec)" << std::dec << hex_integer << endl; // Displaying integers in decimal format (default).
-	cout << "hex_integer (std::oct)" << std::oct << hex_integer << endl; // Displaying integers in octal format.
+	cout << "hex_integer (std::hex): " << std::hex << hex_integer << endl; // Displaying integers in hexadecimal format.
+	cout << "hex_integer (std::dec): " << std::dec << hex_integer << endl; // Displaying integers in decimal format (default).
+	cout << "hex_integer (std::oct): " << std::oct << hex_integer << endl; // Displaying integers in octal format.
 	cout << dec;
 
 		// Typecasting.
@@ -119,10 +122,11 @@ int main() {
 		// User input.
 	string yourName;
 	cout << "What is your name? ";
-	getline(cin, yourName);
+	//getline(cin, yourName);
 	cout << "Hello " << yourName << endl << endl;
 
 	// |ARRAYS|:
+	cout << endl << "|ARRAYS|:" << endl << endl;
 		// Constructing.
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
 	int myFavNumsMulti[3][3] = { {4, 13, 14}, {4, 13, 14},{14, 24, 34 } };
@@ -138,6 +142,8 @@ int main() {
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
 	// |CONTROL FLOW|:
+	cout << endl << "|CONTROL FLOW|:" << endl << endl;
+
 		// If statement.
 	if (true) {}
 	else if (false) {}
@@ -186,6 +192,7 @@ int main() {
 	// |EXCEPTION HANDLING|:
 		// Use this when trying to execute code that may raise an error.
 		// Only use this when the error is the result of something external to this program.
+	cout << endl << "|EXCEPTION HANDLING|:" << endl << endl;
 	int number = 0;
 	try {
 		if (number != 0) {
@@ -198,6 +205,7 @@ int main() {
 	}
 
 	// |FILE I/O|:
+	cout << endl << "|FILE I/O|:" << endl << endl;
 		// We can read & write to files using text or machine readable binary.
 	string steveQuote = "A day without sunshine is like, you know, night";
 
@@ -255,16 +263,14 @@ int main() {
 	}
 
 
-	// |POINTERS|:
-	// TODO: Pointers.
+	// |POINTERS|:TODO
+	cout << endl << "|POINTERS|:" << endl << endl;
 
+	// |REFERENCES|:TODO
+	cout << endl << "|REFERENCES|:" << endl << endl;
 
-	// |REFERENCES|:
-	// TODO:  References.
-
-
-	// |STRINGS|:
-	// TODO:  Strings
+	// |STRINGS|:TODO
+	cout << endl << "|STRINGS|:" << endl << endl;
 
 		// stoi converts the string into an integer.
 	string stringVar = "100";
@@ -278,6 +284,7 @@ int main() {
 
 	// |VECTORS|:
 		// Vectors are like arrays, but their size can change.
+	cout << endl << "|VECTORS|:" << endl << endl;
 
 	vector <int> lotteryNumVect(10);
 
@@ -317,6 +324,7 @@ int main() {
 
 	// |CLASSES|:
 		// Instantiate an Animal object with name Fred.
+	cout << endl << "|CLASSES|:" << endl << endl;
 	Animal fred;
 
 		// Setting attributes.
