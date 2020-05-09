@@ -217,6 +217,7 @@ int main() {
 
 	// |FILE I/O|:
 	cout << endl << "|FILE I/O|:" << endl << endl;
+
 		// We can read & write to files using text or machine readable binary.
 	string steveQuote = "A day without sunshine is like, you know, night";
 
@@ -275,14 +276,44 @@ int main() {
 
 
 	//
-	// |POINTERS|:TODO
+	// |POINTERS|:
 	//
 	cout << endl << "|POINTERS|:" << endl << endl;
 
+		// Reference and dereference operators are complementary.
+	int myvar = 25;
+
+		// & is the address of operator,and can be read simply as "address of"
+	int * foo = &myvar;
+	cout << "foo is: " << foo << endl;
+
+		// * is the dereference operator,and can be read as "value pointed to by"
+	int bar = *foo;
+	cout << "bar is: " << bar << endl;
+
+
+
 	//
-	// |REFERENCES|:TODO
+	// |REFERENCES|:
 	//
 	cout << endl << "|REFERENCES|:" << endl << endl;
+
+
+		// Declaring references.
+	int    i;
+	double d;
+	int& r = i;
+	double& s = d;
+
+	i = 5;
+	cout << "Value of i is: " << i << endl;
+	cout << "Value of i reference is: " << r << endl;
+
+	d = 11.7;
+	cout << "Value of d is: " << d << endl;
+	cout << "Value of d reference is: " << s << endl;
+
+		// References are usually used for function arguments & return values.
 
 	//
 	// |STRINGS|:
@@ -314,11 +345,11 @@ int main() {
 		// stoi converts the string into an integer.
 	string stringVar = "100";
 	int intVar = stoi(stringVar);
-	cout << intVar << endl;
+	cout << "intVar is: " << intVar << endl;
 
 		// stof converts the string into a float.
 	float floatVar = stof(stringVar);
-	cout << floatVar << endl;
+	cout << "floatVar is: " << floatVar << endl;
 	cout << endl;
 
 	//
