@@ -14,7 +14,10 @@ int addNumbers(int, int, int);
 int getFactorial(int);
 void makeMeYoung(int*);
 
+
+//
 // |CLASSES|:
+//
 class Animal {
 	// Private variables are only available to methods in the class.
 private:
@@ -55,7 +58,7 @@ public:
 	void toString();
 };
 
-// We can inherit the variables & methods of other classes.
+	// We can inherit the variables & methods of other classes.
 class Dog : public Animal {
 private:
 	string sound = "WOOF!!";
@@ -73,7 +76,9 @@ public:
 };
 
 int main() {
+	//
 	// |ARITHMETIC|:
+	//
 		// operators are +, -, *, /, %, ++, --
 	cout << "|ARITHMETIC|:" << endl << endl;
 
@@ -125,7 +130,9 @@ int main() {
 	//getline(cin, yourName);
 	cout << "Hello " << yourName << endl << endl;
 
+	//
 	// |ARRAYS|:
+	//
 	cout << endl << "|ARRAYS|:" << endl << endl;
 		// Constructing.
 	int myFavNums[5] = { 4, 13, 14, 24, 34 };
@@ -141,7 +148,9 @@ int main() {
 	cout << "myFavNums[0] = " << myFavNums[0] << endl;
 	cout << "myFavNumsMulti[0] = " << myFavNumsMulti[0][0] << endl;
 
+	//
 	// |CONTROL FLOW|:
+	//
 	cout << endl << "|CONTROL FLOW|:" << endl << endl;
 
 		// If statement.
@@ -189,7 +198,9 @@ int main() {
 
 	cout << endl;
 
+	//
 	// |EXCEPTION HANDLING|:
+	//
 		// Use this when trying to execute code that may raise an error.
 		// Only use this when the error is the result of something external to this program.
 	cout << endl << "|EXCEPTION HANDLING|:" << endl << endl;
@@ -263,14 +274,42 @@ int main() {
 	}
 
 
+	//
 	// |POINTERS|:TODO
+	//
 	cout << endl << "|POINTERS|:" << endl << endl;
 
+	//
 	// |REFERENCES|:TODO
+	//
 	cout << endl << "|REFERENCES|:" << endl << endl;
 
-	// |STRINGS|:TODO
+	//
+	// |STRINGS|:
+	//
 	cout << endl << "|STRINGS|:" << endl << endl;
+
+		//Definition.
+	string string1 = "hello";
+	string string2 = "world";
+	string string3 = "";
+
+		// Concatenation.
+	string3 = string1 + string2;
+	cout << "string3 is: "  << string3 << endl;
+
+		// Length.
+	cout << "string1 has a length of: "  << string1.length() << endl;
+
+		// Append.
+	string firstName = "John ";
+	string lastName = "Doe";
+	string fullName = firstName.append(lastName); //Typically quicker than concatenation.
+	cout << "fullName is: "  << fullName << endl;
+
+		// Indexing.
+	firstName[0] = 'G';
+	cout << "firstName is: "  << firstName << endl;
 
 		// stoi converts the string into an integer.
 	string stringVar = "100";
@@ -282,7 +321,9 @@ int main() {
 	cout << floatVar << endl;
 	cout << endl;
 
+	//
 	// |VECTORS|:
+	//
 		// Vectors are like arrays, but their size can change.
 	cout << endl << "|VECTORS|:" << endl << endl;
 
@@ -290,39 +331,40 @@ int main() {
 
 	int lotteryNumArray[5] = { 4, 13, 14, 24, 34 };
 
-		// Add the array to the vector starting at the beginning of the vector
+		// Add the array to the vector starting at the beginning of the vector.
 	lotteryNumVect.insert(lotteryNumVect.begin(), lotteryNumArray, lotteryNumArray + 3);
 
-		// Insert a value into the 5th index
+		// Insert a value into the 5th index.
 	lotteryNumVect.insert(lotteryNumVect.begin() + 5, 44);
 
-		// at gets the value in the specified index
+		// at gets the value in the specified index.
 	cout << "Value in 5 " << lotteryNumVect.at(5) << endl;
 
-		// push_back adds a value at the end of a vector
+		// push_back adds a value at the end of a vector.
 	lotteryNumVect.push_back(64);
 
-		// back gets the value in the final index
+		// back gets the value in the final index.
 	cout << "Final Value " << lotteryNumVect.back() << endl;
 
-		// pop_back removes the final element
+		// pop_back removes the final element.
 	lotteryNumVect.pop_back();
 
-		// front returns the first element
+		// front returns the first element.
 	cout << "First Element " << lotteryNumVect.front() << endl;
 
-		// back returns the last element
+		// back returns the last element.
 	cout << "Last Element " << lotteryNumVect.back() << endl;
 
-		// empty tells you if the vector is empty
+		// empty tells you if the vector is empty.
 	cout << "Vector Empty " << lotteryNumVect.empty() << endl;
 
-		// size returns the total number of elements
+		// size returns the total number of elements.
 	cout << "Number of Vector Elements " << lotteryNumVect.size() << endl;
 
 
-
+	//
 	// |CLASSES|:
+	//
 		// Instantiate an Animal object with name Fred.
 	cout << endl << "|CLASSES|:" << endl << endl;
 	Animal fred;
@@ -365,7 +407,9 @@ int main() {
 	return 0;
 }
 
+//
 // |FUNCTIONS|:
+//
 	// Declaring.
 int addNumbers(int firstNum, int secondNum = 0) { //secondNum is an optional parameter with default value 0.
 	int combinedValue = firstNum + secondNum;
